@@ -1,8 +1,4 @@
 node{
- environment {
-        BRANCH_NAME = "master"
-        MYTOOL_VERSION = '1.0.0'
-        }
     stage('Checkout SCM') {
   checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [ [$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/Qaroev/jenkins-app.git']]])
     }
