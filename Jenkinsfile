@@ -22,7 +22,7 @@ node{
         sh 'docker cp jenkinsapp${BUILD_NUMBER}:./ng-app/dist/build-latest.zip .'
         sh 'docker rm jenkinsapp${BUILD_NUMBER} --force'
         sh 'docker rmi temp/temp --force'
-        sh 'curl -v --user bobojon:bobojon123! -T build-latest.zip -X PUT "http://3.126.195.89:8081/artifactory/generic-local/bobojon/${NODE_NAME}/jenkinsapp-${MYTOOL_VERSION}.${BUILD_NUMBER}.zip"'
+        sh 'curl -v --user bobojon:bobojon123! -T build-latest.zip -X PUT "http://3.126.195.89:8081/artifactory/generic-local/bobojon/${BRANCH_NAME}/jenkinsapp-${MYTOOL_VERSION}.${BUILD_NUMBER}.zip"'
     }
 
 }
