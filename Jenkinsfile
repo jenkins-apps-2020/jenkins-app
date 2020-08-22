@@ -9,7 +9,7 @@ node{
 
     stage('Publish build-info') {
      try {
-        sh 'docker rm jenkinsapp --force'
+        sh 'docker rm jenkinsapp${BUILD_NUMBER} --force'
      } catch (exc) {
 
      }
