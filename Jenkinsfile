@@ -14,7 +14,7 @@ pipeline {
                }
             }
         }
-        stage('Build BykiLister UI') {
+        stage('Build Jenkinsapp UI') {
             steps {
                 script {
                     docker.build('temp/temp')
