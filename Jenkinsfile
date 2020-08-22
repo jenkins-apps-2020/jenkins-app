@@ -16,7 +16,6 @@ pipeline {
         }
         stage('Build BykiLister UI') {
             steps {
-            lastChanges since: 'LAST_SUCCESSFUL_BUILD', format:'SIDE',matching: 'LINE'
                 script {
                     docker.build('temp/temp')
                 }
