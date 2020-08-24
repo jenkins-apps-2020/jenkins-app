@@ -41,7 +41,7 @@ pipeline {
                     steps {
                         parallel (
                             "windows" : {
-                                node('windows') {
+                                node('windows-slave') {
                                     bat "print from windows"
                                 }
                             },
@@ -50,8 +50,8 @@ pipeline {
                                     sh "echo from mac"
                                 }
                             },
-                            "linux" : {
-                                node('linux') {
+                            "ubuntu_164_agent" : {
+                                node('ubuntu_164_agent') {
                                     sh "echo from linux"
                                 }
                             }
