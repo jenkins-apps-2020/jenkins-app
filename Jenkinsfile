@@ -23,6 +23,23 @@ pipeline {
                 }
             }
         }
+        stages {
+                stage("test") {
+                    steps {
+                        parallel (
+                            "Firefox" : {
+                                sh "echo testing FFX"
+                                sh "echo more steps"
+                            },
+                            "Chrome" : {
+                                sh "echo testing Chrome"
+                                sh "echo more steps"
+                            }
+                        }
+                    )
+                }
+            }
+       }
         stage('Publish and remove docker images') {
             steps {
                 script {
