@@ -37,6 +37,27 @@ pipeline {
                 )
             }
         }
+          stage("distribute") {
+                    steps {
+                        parallel (
+                            "windows" : {
+                                node('windows') {
+                                    bat "print from windows"
+                                }
+                            },
+                            "mac" : {
+                                node('osx') {
+                                    sh "echo from mac"
+                                }
+                            },
+                            "linux" : {
+                                node('linux') {
+                                    sh "echo from linux"
+                                }
+                            }
+                        }
+                    )
+                }
         stage('Publish and remove docker images') {
             steps {
                 script {
