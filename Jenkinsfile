@@ -55,8 +55,8 @@ pipeline {
                                     sh "echo from linux"
                                 }
                             }
-                        }
-                    )
+                             )
+                    }
                 }
         stage('Publish and remove docker images') {
             steps {
