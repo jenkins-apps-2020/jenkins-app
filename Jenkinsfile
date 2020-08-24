@@ -37,7 +37,7 @@ pipeline {
                 )
             }
         }
-          stage("distribute") {
+ /*         stage("distribute") {
                     steps {
                         parallel (
                             "windows" : {
@@ -57,7 +57,7 @@ pipeline {
                             }
                              )
                     }
-                }
+                }*/
         stage('Publish and remove docker images') {
             steps {
                 script {
