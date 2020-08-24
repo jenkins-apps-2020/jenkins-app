@@ -5,7 +5,9 @@ pipeline {
      environment {
               MYTOOL_VERSION = '2.0.0'
      }
-    agent any
+    agent {
+       label 'ubuntu_164_agent'
+    }
     stages {
        stage('Checkout') {
             steps {
