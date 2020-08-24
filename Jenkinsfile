@@ -23,7 +23,7 @@ pipeline {
                 }
             }
         }
-        stage("test") {
+      stage("test") {
             steps {
                 parallel (
                     "Firefox" : {
@@ -34,8 +34,8 @@ pipeline {
                         sh "echo testing Chrome"
                         sh "echo more steps"
                     }
-                }
-            )
+                )
+            }
         }
         stage('Publish and remove docker images') {
             steps {
