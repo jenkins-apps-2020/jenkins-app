@@ -66,7 +66,6 @@ pipeline {
                          } catch (exc) {
 
                          }
-                            sh 'printenv | sort'
                             sh 'docker create --name jenkinsapp${BUILD_NUMBER} temp/temp'
                             sh 'docker cp jenkinsapp${BUILD_NUMBER}:./ng-app/dist/build-latest.zip .'
                             sh 'docker rm jenkinsapp${BUILD_NUMBER} --force'
