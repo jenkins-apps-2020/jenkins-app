@@ -16,8 +16,6 @@ const pat = /(<\/!doctype>|<\/base>|<\/meta>|<\/link>)\n?/gmi;
 result = result
     .replace(pat, '')
     .replace('<base href="/">', '<base href="">')
-    .replace(/https:\/\/docker1test\.transparent\.local\/resource\/opg/gm, 'https://opg.transparent.com')
-    .replace('//utilite1.transparent.local:4900', 'https://loxy.transparent.com')
     .replace('<!doctype>', '<!DOCTYPE html>');
 
 fs.writeFileSync("index.html", result);
